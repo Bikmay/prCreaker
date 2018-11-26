@@ -1,5 +1,7 @@
 package servlets;
 
+import dao.Database;
+
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +22,8 @@ public class HeroServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        System.out.println("sad");
+        Database.connect();
         req.getRequestDispatcher("/webapp/index.jsp").forward(req,resp);
 
     }

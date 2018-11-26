@@ -1,4 +1,4 @@
-<%--
+<%@ page import="dao.Database" %><%--
   Created by IntelliJ IDEA.
   User: Rick
   Date: 26.11.2018
@@ -12,6 +12,7 @@
   <title>Title</title>
 </head>
 <body>
+<%=Database.connect() %>
 <p>test</p>
 </body>
 </html>
