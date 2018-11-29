@@ -9,10 +9,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Heros</title>
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<%=Database.connect() %>
-<p>test</p>
+
+
+<div class="div-gen">
+  <table class="table">
+    <tbody class="table">
+      <tr class="row">
+        <td class="hero">
+          <img class="hero-img" src="img/default.png" alt="">
+          <p>name</p>
+        </td>
+      </tr>
+      <tr class="row">
+        <td class="hero">
+          <img class="hero-img" src="img/default.png" alt="">
+          <p>name</p>
+        </td>
+      </tr>
+      <tr class="row">
+        <td class="hero">
+          <img class="hero-img" src="img/default.png" alt="">
+          <p>name</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="button-create">Create hero</button>
+</div>
+
 </body>
 </html>

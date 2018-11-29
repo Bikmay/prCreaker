@@ -1,18 +1,18 @@
 package models;
 
-import java.io.File;
+
 
 public class Hero {
 
     public int id;
     public String name;
-    public Universe universe;
+    public String universe;
     public int power;
 
     public String description;
     public boolean alive;
 
-    public File logo;
+    public String logo;
     public int phone;
 
 
