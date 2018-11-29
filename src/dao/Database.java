@@ -19,14 +19,17 @@ public class Database {
     Statement statement = null;
     ResultSet resultSet = null;
 
-    private void connect() throws IOException, SQLException {
-
+    private  static Connection connect() throws IOException, SQLException {
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
 
         try{
 
             Class.forName("org.sqlite.JDBC");
             connection = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\Rick\\IdeaProjects\\prCreaker\\src\\dao\\heros.sqlite");
 
+            return connection;
 
 
 
@@ -38,21 +41,27 @@ public class Database {
         }
 
 
-
+        return null;
 
     }
 
-    public void write(String request) throws SQLException, IOException, ClassNotFoundException {
+    public static void write(String request) throws SQLException, IOException, ClassNotFoundException {
 
-        connect();
+        Connection connection =  connect();
+        Statement statement = connection.createStatement();
+
+
         statement.execute(request);
-        close();
+        connection.close();
+        statement.close();
     }
 
-    public List<Hero> read(String request) throws SQLException, IOException, ClassNotFoundException {
+    public static List<Hero> read(String request) throws SQLException, IOException, ClassNotFoundException {
 
-        connect();
+        Connection connection = connect();
+        Statement statement = connection.createStatement();
         List<Hero> list = null;
+        ResultSet resultSet =null;
 
 
         resultSet=statement.executeQuery(request);
@@ -71,19 +80,13 @@ public class Database {
             list.add(hero);
         }
 
-        close();
+        connection.close();
+        statement.close();
+        resultSet.close();
         return list;
 
     }
 
-    public void close() throws ClassNotFoundException, SQLException
-    {
-        connection.close();
-        statement.close();
-        resultSet.close();
-
-
-    }
 
 
 }

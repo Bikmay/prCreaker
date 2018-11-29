@@ -23,7 +23,7 @@ public class HeroServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         System.out.println("sad");
-        Database.connect();
+
         req.getRequestDispatcher("/webapp/index.jsp").forward(req,resp);
 
     }

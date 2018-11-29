@@ -15,7 +15,19 @@
 </head>
 <body>
 
-
+<div>
+  <table cellpadding="0" cellspacing="0" border="0">
+    <thead>
+    <tr>
+      <th>logo</th>
+      <th>Name</th>
+      <th>Universe</th>
+      <th>Power</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+  </table>
+</div>
 <div class="div-gen">
   <table class="table">
     <tbody class="table">
@@ -29,14 +41,10 @@
         <td class="hero">
           <img class="hero-img" src="img/default.png" alt="">
           <p>name</p>
+
         </td>
       </tr>
-      <tr class="row">
-        <td class="hero">
-          <img class="hero-img" src="img/default.png" alt="">
-          <p>name</p>
-        </td>
-      </tr>
+
     </tbody>
   </table>
   <button class="button-create">Create hero</button>
