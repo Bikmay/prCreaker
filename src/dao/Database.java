@@ -3,13 +3,10 @@ package dao;
 import models.Hero;
 
 import java.io.File;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -18,6 +15,11 @@ public class Database {
     Connection connection = null;
     Statement statement = null;
     ResultSet resultSet = null;
+    public static int a=0;
+
+    public static int getA(){
+        return a;
+    }
 
     private  static Connection connect() throws IOException, SQLException {
         Connection connection = null;
@@ -56,16 +58,18 @@ public class Database {
         statement.close();
     }
 
-    public static List<Hero> read(String request) throws SQLException, IOException, ClassNotFoundException {
+    public static ArrayList<Hero> read(String request) throws SQLException, IOException, ClassNotFoundException {
 
         Connection connection = connect();
         Statement statement = connection.createStatement();
-        List<Hero> list = null;
+        ArrayList<Hero> list = null;
         ResultSet resultSet =null;
 
 
         resultSet=statement.executeQuery(request);
 
+        if(resultSet==null)
+            System.out.println("result null");
         Hero hero= new Hero();
 
         while (resultSet.next())
@@ -79,6 +83,11 @@ public class Database {
             hero.phone=resultSet.getInt("phone");
             list.add(hero);
         }
+
+        if(list==null)
+            a=list.get(0).id;
+
+        System.out.println("2121");
 
         connection.close();
         statement.close();

@@ -1,6 +1,7 @@
 package servlets;
 
 import dao.Database;
+import models.Hero;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -8,9 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.Array;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class HeroServlet extends HttpServlet {
 
+    static Hero a;
     public void init(ServletConfig servletConfig) {
         try {
             super.init(servletConfig);
@@ -22,9 +28,25 @@ public class HeroServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        System.out.println("sad");
 
-        req.getRequestDispatcher("/webapp/index.jsp").forward(req,resp);
+        try {
+            ArrayList<Hero> listHeros=Database.read("SELECT*FROM heros");
+
+
+
+            req.setAttribute("listHeros",listHeros);
+
+
+
+            req.getRequestDispatcher("/webapp/index.jsp").forward(req,resp);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
+
 
     }
 
