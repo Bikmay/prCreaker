@@ -84,8 +84,7 @@
 
 
 
-      <%=Database.getA() %>
-    <c:forEach var="row" items="$listHeros">
+    <c:forEach var="row" items="${listHeros}">
 
       <td class="hero">
         <img class="hero-img" src="" alt="">

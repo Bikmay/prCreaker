@@ -16,7 +16,6 @@ import java.util.List;
 
 public class HeroServlet extends HttpServlet {
 
-    static Hero a;
     public void init(ServletConfig servletConfig) {
         try {
             super.init(servletConfig);

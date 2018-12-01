@@ -21,7 +21,7 @@ public class Database {
         return a;
     }
 
-    private  static Connection connect() throws IOException, SQLException {
+    private static Connection connect() throws IOException, SQLException {
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
@@ -70,28 +70,29 @@ public class Database {
 
         if(resultSet==null)
             System.out.println("result null");
-        Hero hero= new Hero();
-
+        Hero hero= null;
         while (resultSet.next())
         {
+            hero=new Hero();
+
             hero.id =resultSet.getInt("id");
             hero.name=resultSet.getString("name");
             hero.universe=resultSet.getString("universe");
             hero.power=resultSet.getInt("power");
-            hero.description=resultSet.getString("desqription");
+            hero.description=resultSet.getString("description");
             hero.logo=resultSet.getString("icon");
             hero.phone=resultSet.getInt("phone");
             list.add(hero);
         }
 
         if(list==null)
-            a=list.get(0).id;
+            System.out.println("list is null!!");
 
         System.out.println("2121");
 
-        connection.close();
-        statement.close();
         resultSet.close();
+        statement.close();
+        connection.close();
         return list;
 
     }
