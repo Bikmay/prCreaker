@@ -42,59 +42,35 @@
     %>
   <table class="table" cols="5">
     <tbody class="table">
-      <!--<tr class="row" align="center" valign="middle">
-        <td class="hero">
-          <img class="hero-img" src="img/default.png" alt="">
-        </td>
-        <td>Andrey</td>
-        <td>marvel</td>
-        <td>12</td>
-        <td>sadasdasdasdd</td>
-      </tr>
-      <tr class="row" align="center" valign="middle">
-        <td class="hero">
-          <img class="hero-img" src="img/default.png" alt="">
-        </td>
-        <td>Andrey</td>
-        <td>marvel</td>
-        <td>12</td>
-        <td>sadasdasdasdd</td>
-      </tr>
-      <tr class="row" align="center" valign="middle">
-        <td class="hero">
-          <img class="hero-img" src="img/default.png" alt="">
-        </td>
-        <td>Andrey</td>
-        <td>marvel</td>
-        <td>12</td>
-        <td>sadasdasdasdd</td>
-      </tr>
-      <tr class="row" align="center" valign="middle">
-        <td class="hero">
-          <img class="hero-img" src="img/default.png" alt="">
-        </td>
-        <td>Andrey</td>
-        <td>marvel</td>
-        <td>12</td>
-        <td>sadasdasdasdd</td>
+
+
+
+      <%
+        ArrayList<Hero> list = (ArrayList<Hero>) request.getAttribute("listHeros");
+
+        for (int i = 0; i <list.size() ; i++) {
+
+
+      %>
+
+        <tr class="row">
+        <td><img class="hero-img" src=<%=list.get(i).logo%> alt=""></td>
+        <td><%=list.get(i).name%></td>
+        <td><%=list.get(i).universe%></td>
+        <td><%=list.get(i).power%></td>
+        <td><%=list.get(i).description%></td>
+
       </tr>
 
--->
+
+      <%
+        }
+      %>
 
 
 
 
-    <c:forEach var="row" items="${listHeros}">
 
-      <td class="hero">
-        <img class="hero-img" src="" alt="">
-      </td>
-      <td><c:out value="${row.name}"/>;</td>
-      <td><c:out value="${row.universe}"/>;</td>
-      <td><c:out value="${row.power}"/>;</td>
-      <td><c:out value="${row.description}"/>;</td>
-      </tr>
-    </c:forEach>
 
     </tbody>
   </table>

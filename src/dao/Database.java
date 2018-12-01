@@ -1,6 +1,8 @@
 package dao;
 
 import models.Hero;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 
 import java.io.File;
 import java.sql.*;
@@ -11,6 +13,10 @@ import java.util.List;
 
 
 public class Database {
+
+    private static final Logger logger= (Logger) LogManager.getLogger(Database.class);
+
+
 
     Connection connection = null;
     Statement statement = null;
@@ -62,7 +68,7 @@ public class Database {
 
         Connection connection = connect();
         Statement statement = connection.createStatement();
-        ArrayList<Hero> list = null;
+        ArrayList<Hero> list = new ArrayList<>();
         ResultSet resultSet =null;
 
 
@@ -75,20 +81,17 @@ public class Database {
         {
             hero=new Hero();
 
-            hero.id =resultSet.getInt("id");
-            hero.name=resultSet.getString("name");
-            hero.universe=resultSet.getString("universe");
-            hero.power=resultSet.getInt("power");
-            hero.description=resultSet.getString("description");
-            hero.logo=resultSet.getString("icon");
-            hero.phone=resultSet.getInt("phone");
+            hero.id =resultSet.getInt(1);
+            hero.name=resultSet.getString(2);
+            hero.universe=resultSet.getString(3);
+            hero.power=resultSet.getInt(4);
+            hero.description=resultSet.getString(5);
+            hero.logo=resultSet.getString(6);
+            hero.phone=resultSet.getInt(7);
             list.add(hero);
         }
 
-        if(list==null)
-            System.out.println("list is null!!");
-
-        System.out.println("2121");
+        System.out.println(list.get(0).name);
 
         resultSet.close();
         statement.close();

@@ -9,7 +9,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>creaker</servlet-name>
-        <url-pattern>/creaker</url-pattern>
+        <url-pattern>/creacker</url-pattern>
     </servlet-mapping>
 
 </web-app>

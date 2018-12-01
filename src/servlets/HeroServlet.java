@@ -31,13 +31,13 @@ public class HeroServlet extends HttpServlet {
         try {
             ArrayList<Hero> listHeros=Database.read("SELECT*FROM heros");
 
-
+            System.out.println("sdsd");
 
             req.setAttribute("listHeros",listHeros);
 
 
 
-            req.getRequestDispatcher("/webapp/index.jsp").forward(req,resp);
+            req.getRequestDispatcher("index.jsp").forward(req,resp);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

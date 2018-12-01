@@ -41,9 +41,17 @@ head,body{
     width: 100%;
     height: 90%;
 }
+
+
 .row{
     height: 30px;
 }
+
+.row img {
+
+    height: 61px;
+}
+
 
 .button-create{
     width: 90%;
