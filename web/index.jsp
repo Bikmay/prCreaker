@@ -22,6 +22,7 @@
 <body>
 
 
+<div class="all">
 <div class="div-gen">
   <div>
     <table cellpadding="0" cellspacing="0" border="0">
@@ -37,9 +38,7 @@
     </table>
   </div>
   <div class="tbl-content">
-    <%
 
-    %>
   <table class="table" cols="5">
     <tbody class="table">
 
@@ -77,6 +76,6 @@
   </div>
   <button class="button-create">Create hero</button>
 </div>
-
+</div>
 </body>
 </html>

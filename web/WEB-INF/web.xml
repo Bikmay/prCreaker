@@ -12,4 +12,13 @@
         <url-pattern>/creacker</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>registration</servlet-name>
+        <servlet-class>servlets.HeroRegistrationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>registration</servlet-name>
+        <url-pattern>/registration</url-pattern>
+    </servlet-mapping>
+
 </web-app>
