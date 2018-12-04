@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Heros</title>
+    <title>Registration</title>
 
     <link rel="stylesheet" href="css/registration.css">
 </head>
@@ -11,24 +11,33 @@
 
 <div class="gen">
     <div class="card">
-        <div>
-            <label for="name">name</label>
-            <input id="name" type="text">
+
+        <h1>Registration hero</h1>
+        <form class="form" action="registrationhero"  method="post”>
+        <div class="inputs">
+            <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text">
         </div>
-        <div>
-            <label for="uni">universe</label>
-            <input id="uni" type="text">
+            <div>
+                <label for="uni">Universe</label>
+                <input id="uni" name="uni" type="text">
+            </div>
+
+            <div>
+                <label for="power">Power</label>
+                <input id="power" name="power" type="text">
+            </div>
+
+            <div>
+                <label for="description">Description</label>
+                <input id="description" name="description" type="text">
+            </div>
+        <input type="submit" class="button">
+        <p>${error}</p>
         </div>
 
-        <div>
-            <label for="power">power</label>
-            <input id="power" type="text">
-        </div>
-
-       <div>
-        <label for="description">description</label>
-        <input id="description" type="text">
-       </div>
+    </form>
     </div>
 </div>
 

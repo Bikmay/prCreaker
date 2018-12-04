@@ -13,6 +13,9 @@ import java.sql.Array;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+
+
 public class HeroRegistrationServlet extends HttpServlet{
 
 
@@ -37,15 +40,11 @@ public class HeroRegistrationServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-    /*
-        String name = req.getParameter("name");
-        int age = Integer.parseInt(req.getParameter("age"));
-        User user = new User(name, age);
-        service.saveUser(user);
-        resp.sendRedirect("/users");*/
+
+
+
 
     }
-
     @Override
     protected void	doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         /*

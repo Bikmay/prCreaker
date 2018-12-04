@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 html,body{
     margin: 0;
     padding: 0;
@@ -14,12 +16,65 @@ html,body{
 }
 
 .card{
-    height: 57vh;
+    height: 800px;
 
     width: 54vw;
 
-    background-color: antiquewhite;
+    background-color: white;
 
     margin-left: 23%;
-    margin-top: 11%;
+    margin-top: 310px;
+
+    font-size: 22px;
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+}
+
+.inputs{
+    margin: 75px;
+
+}
+
+input{
+    display: block;
+    height: 54px;
+
+    width: 400px;
+
+    font-size: 23px;
+
+    border: none;
+
+    border-bottom: 4px solid black;
+}
+
+.inputs div{
+    margin-top: 33px;
+}
+
+.button{
+
+    height: 50px;
+    width: 404px;
+    background-color: #47E260;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    margin-top: 80px;
+}
+
+.card h1{
+    margin: 67px;
+}
+
+.form{
+    margin: 71px;
+}
+
+.form div{
+    margin-top: 40px;
+}
+
+.card p{
+    color:red;
 }

@@ -58,7 +58,7 @@ public class Database {
         Connection connection =  connect();
         Statement statement = connection.createStatement();
 
-
+        System.out.println("write");
         statement.execute(request);
         connection.close();
         statement.close();

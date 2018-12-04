@@ -94,7 +94,7 @@ td{
     text-align: left;
     vertical-align:middle;
     font-weight: 300;
-    font-size: 12px;
+    font-size: 21px;
     color: black;
     border-bottom: solid 1px rgba(255,255,255,0.1);
 }
@@ -113,6 +113,20 @@ table{
 
 
 
+
+
+@media (max-width: 1366px) {
+    .div-gen{
+        height: 78vh;
+    }
+
+    .button-create {
+
+        margin-top: 23px;
+    }
+}
+
+
 @media (max-width: 1920px) {
     .div-gen{
         height: 60vh;
@@ -128,16 +142,3 @@ table{
 
 
 }
-
-@media (max-width: 1366px) {
-    .div-gen{
-        height: 78vh;
-    }
-
-    .button-create {
-
-        margin-top: 23px;
-    }
-}
-
-
