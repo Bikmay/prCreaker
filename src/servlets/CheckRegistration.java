@@ -13,7 +13,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
-@WebServlet("/registrationhero")
+
 public class CheckRegistration extends HttpServlet {
 
     @Override
@@ -43,11 +43,12 @@ public class CheckRegistration extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        System.out.println("sdsd");
-        String name = req.getParameter("name");
-        String universe = req.getParameter("uni");
-        String power = req.getParameter("power");
-        String description = req.getParameter("description");
+        Hero hero=new Hero();
+        System.out.println("servlet2");
+        hero.name= req.getParameter("name");
+        hero.universe = req.getParameter("uni");
+        hero.power = Integer.parseInt(req.getParameter("power"));
+        hero.description = req.getParameter("description");
 
         try {
             ArrayList<Hero> listHeros= Database.read("SELECT*FROM heros");
@@ -55,18 +56,18 @@ public class CheckRegistration extends HttpServlet {
             req.setAttribute("listHeros",listHeros);
             for (int i = 0; i <listHeros.size() ; i++) {
 
-                if(listHeros.get(i).name.equals(name)){
+                if(listHeros.get(i).name.equals(hero.name)){
                     System.out.println("check");
                     req.setAttribute("error", "Hero already exists");
-//                    resp.sendRedirect(req.getContextPath() + "/heros");
+                     resp.sendRedirect(req.getContextPath() + "/heros");
 
                 }
             }
 
-            Database.write("INSERT INTO 'heros' ('id', 'name','universe','power','description') VALUES ('"+ name +"','"+ universe +"',"+power+","+description+");");
+            Database.write("INSERT INTO heros (name,universe,power,description,icon) VALUES (?,?,?,?,?);",hero);
 
             System.out.println("enter");
-           // resp.sendRedirect("heros");
+            resp.sendRedirect("heros");
 
         } catch (SQLException e) {
             e.printStackTrace();

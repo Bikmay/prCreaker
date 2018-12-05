@@ -53,15 +53,22 @@ public class Database {
 
     }
 
-    public static void write(String request) throws SQLException, IOException, ClassNotFoundException {
+    public static void write(String request,Hero hero) throws SQLException, IOException, ClassNotFoundException {
 
         Connection connection =  connect();
-        Statement statement = connection.createStatement();
+        PreparedStatement prepStmt  = connection.prepareStatement(request);
 
-        System.out.println("write");
-        statement.execute(request);
+        prepStmt.setString(1,hero.name);
+        prepStmt.setString(2,hero.universe);
+        prepStmt.setInt(3,hero.power);
+        prepStmt.setString(4,hero.description);
+        prepStmt.setString(5,hero.logo);
+
+
+
+        prepStmt.execute();
         connection.close();
-        statement.close();
+        prepStmt.close();
     }
 
     public static ArrayList<Hero> read(String request) throws SQLException, IOException, ClassNotFoundException {

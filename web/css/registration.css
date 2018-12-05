@@ -23,9 +23,9 @@ html,body{
     background-color: white;
 
     margin-left: 23%;
-    margin-top: 310px;
+    margin-top: 131px;
 
-    font-size: 22px;
+    font-size: 14px;
     position: absolute;
     font-family: 'Roboto', sans-serif;
 }
@@ -46,6 +46,9 @@ input{
     border: none;
 
     border-bottom: 4px solid black;
+
+    margin-top: 15px;
+    margin-bottom: 30px;
 }
 
 .inputs div{

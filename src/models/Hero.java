@@ -15,6 +15,15 @@ public class Hero {
     public String logo;
     public int phone;
 
+    public Hero(){
+        name="";
+        universe="";
+        power=0;
+        description="";
+        alive=true;
+        logo="img/default.png";
+        phone=0;
+    }
 
 
 

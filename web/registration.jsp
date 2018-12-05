@@ -13,31 +13,28 @@
     <div class="card">
 
         <h1>Registration hero</h1>
-        <form class="form" action="registrationhero"  method="post”>
-        <div class="inputs">
-            <div>
+        <form class="form" action="registrationhero" method="post">
             <label for="name">Name</label>
             <input id="name" name="name" type="text">
-        </div>
-            <div>
-                <label for="uni">Universe</label>
-                <input id="uni" name="uni" type="text">
-            </div>
 
-            <div>
-                <label for="power">Power</label>
-                <input id="power" name="power" type="text">
-            </div>
 
-            <div>
-                <label for="description">Description</label>
-                <input id="description" name="description" type="text">
-            </div>
-        <input type="submit" class="button">
+            <label for="uni">Universal</label>
+            <input id="uni" name="uni" type="text">
+
+
+
+            <label for="power">Power</label>
+            <input id="power" name="power" type="text">
+
+
+
+            <label for="description">Description</label>
+            <input id="description" name="description" type="text">
+            <input class="button" type="submit">
+        </form>
+
         <p>${error}</p>
-        </div>
 
-    </form>
     </div>
 </div>
 

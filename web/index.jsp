@@ -74,7 +74,13 @@
     </tbody>
   </table>
   </div>
-  <button class="button-create">Create hero</button>
+  <button id="button" class="button-create">Create hero</button>
+  <script>
+    var button = document.getElementById("button");
+    button.onclick=function () {
+        document.location.href="/prCreaker_war_exploded/registration"
+    }
+  </script>
 </div>
 </div>
 </body>

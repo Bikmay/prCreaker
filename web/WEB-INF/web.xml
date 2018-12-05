@@ -21,4 +21,14 @@
         <url-pattern>/registration</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>registrationhero</servlet-name>
+        <servlet-class>servlets.CheckRegistration</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>registrationhero</servlet-name>
+        <url-pattern>/registrationhero</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>
